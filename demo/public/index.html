@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <script type="text/javascript">
+         function demo()
+         {
+            if ("WebSocket" in window)
+            {
+               alert("WebSocket is supported by your Browser!");
+               
+               // Let us open a web socket
+               var ws = new WebSocket("ws://localhost:8080/");
+				
+               ws.onopen = function()
+               {
+                  // Web Socket is connected, send data using send()
+                  ws.send(JSON.stringify({hello: 'world'}));
+									ws.send(JSON.stringify({error: true}));
+                  alert("Message is sent...");
+               };
+				
+               ws.onmessage = function (evt) 
+               { 
+                  var received_msg = evt.data;
+                  alert('Check your network traffic in developer tools');
+               };
+				
+               ws.onclose = function()
+               { 
+                  // websocket is closed.
+                  alert("Connection is closed..."); 
+               };
+            }
+            else
+            {
+               // The browser doesn't support WebSocket
+               alert("WebSocket NOT supported by your Browser!");
+            }
+         }
+      </script>
+   </head>
+   <body>
+      <div>
+         <a href="javascript:demo()">Run Demo</a>
+      </div>
+   </body>
+</html>
