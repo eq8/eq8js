@@ -13,19 +13,29 @@ api.register({
 		name: 'hello world',
 		description: 'should echo back inside data',
 		pattern: {hello: 'world'},
-		handler: function(args, ctxt) {
+		handler: function(args, ctxt, done) {
 			console.log('args:', args);
 			console.log('ctxt:', JSON.stringify(ctxt, null, '\t'));
 			ctxt.res.write(args);
+			this.trigger(args, done);
 		}
 	}, {
 		pattern: {error: true},
 		name: 'error true',
 		description: 'should echo back inside error',
-		handler: function(args, ctxt) {
+		handler: function(args, ctxt, done) {
 			console.log('args:', args);
 			console.log('ctxt:', JSON.stringify(ctxt, null, '\t'));
 			ctxt.res.error(args);
+			done();
+		}
+	}],
+	events: [{
+		name: 'event example',
+		pattern: {hello: 'world'},
+		handler: function(args, done) {
+			console.log('triggered hello world event');
+			done();
 		}
 	}]
 });
