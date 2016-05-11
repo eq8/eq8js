@@ -496,6 +496,11 @@
       "from": "https://registry.npmjs.org/lodash/-/lodash-4.11.2.tgz",
       "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.11.2.tgz"
     },
+    "route-recognizer": {
+      "version": "0.1.11",
+      "from": "route-recognizer@latest",
+      "resolved": "https://registry.npmjs.org/route-recognizer/-/route-recognizer-0.1.11.tgz"
+    },
     "seneca": {
       "version": "2.0.1",
       "from": "https://registry.npmjs.org/seneca/-/seneca-2.0.1.tgz",
