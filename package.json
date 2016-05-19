@@ -1,7 +1,7 @@
 {
   "name": "eq8",
   "version": "0.1.0",
-  "description": "A web API framework using (E)vents and (Q)ueries to manage application state",
+  "description": "A web API platform using (E)vents and (Q)ueries to manage application state",
   "main": "index.js",
   "scripts": {
     "audit": "nsp check",
@@ -22,7 +22,7 @@
   },
   "keywords": [
     "api",
-    "framework"
+    "platform"
   ],
   "author": "bbartolome",
   "license": "Apache-2.0",
