@@ -37,13 +37,13 @@
   "dependencies": {
     "async": "2.0.0-rc.3",
     "bloomrun": "1.1.2",
+    "body-parser": "1.15.1",
     "bufferutil": "1.2.1",
     "eq8-core": "0.1.0-rc1",
     "express": "4.13.4",
     "jsonwebtoken": "6.2.0",
     "lodash": "4.11.2",
     "route-recognizer": "0.1.11",
-    "seneca": "2.0.1",
     "utf-8-validate": "1.2.1",
     "winston": "2.2.0",
     "ws": "1.1.0"
