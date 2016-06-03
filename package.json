@@ -38,6 +38,7 @@
     "async": "2.0.0-rc.3",
     "bloomrun": "1.1.2",
     "bufferutil": "1.2.1",
+    "eq8-core": "0.1.0-rc1",
     "express": "4.13.4",
     "jsonwebtoken": "6.2.0",
     "lodash": "4.11.2",
