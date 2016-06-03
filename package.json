@@ -1,6 +1,6 @@
 {
   "name": "eq8",
-  "version": "0.1.0",
+  "version": "0.2.0-rc1",
   "description": "A web API platform using (E)vents and (Q)ueries to manage application state",
   "main": "index.js",
   "scripts": {
