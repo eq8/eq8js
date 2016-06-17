@@ -43,7 +43,9 @@
     "express": "4.13.4",
     "jsonwebtoken": "6.2.0",
     "lodash": "4.11.2",
-    "route-recognizer": "0.1.11",
+    "passport": "https://registry.npmjs.org/passport/-/passport-0.3.2.tgz",
+    "passport-anonymous": "1.0.1",
+    "passport-jwt": "https://registry.npmjs.org/passport-jwt/-/passport-jwt-2.0.0.tgz",
     "utf-8-validate": "1.2.1",
     "winston": "2.2.0",
     "ws": "1.1.0"
