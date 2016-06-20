@@ -190,9 +190,9 @@
       }
     },
     "eq8-core": {
-      "version": "0.1.0-rc1",
-      "from": "eq8-core@0.1.0-rc1",
-      "resolved": "https://registry.npmjs.org/eq8-core/-/eq8-core-0.1.0-rc1.tgz",
+      "version": "0.1.0",
+      "from": "eq8-core@0.1.0",
+      "resolved": "https://registry.npmjs.org/eq8-core/-/eq8-core-0.1.0.tgz",
       "dependencies": {
         "winston": {
           "version": "2.2.0",
