@@ -13,7 +13,7 @@
     "precommit": "npm run lint",
     "prepush": "npm run test",
     "test": "tape test/test.*.js | faucet",
-    "cover": "istanbul cover test/test.index.js test/test.api.js",
+    "cover": "istanbul cover tape test/test.*.js",
     "analyze": "plato -d analysis index.js ./lib/registrars/*.js ./lib/api/*.js"
   },
   "repository": {
