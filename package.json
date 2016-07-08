@@ -47,7 +47,7 @@
     "passport-anonymous": "1.0.1",
     "passport-jwt": "2.0.0",
     "utf-8-validate": "1.2.1",
-    "ws": "1.1.0"
+    "ws": "1.1.1"
   },
   "devDependencies": {
     "dependency-check": "2.5.1",
