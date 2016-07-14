@@ -43,18 +43,23 @@ test('register() an action and act() on it', function(t) {
 		cmd: 'test',
 		v: '0.1'
 	};
+	var testContext = 'some arbitrary context object';
 
+	t.plan(3);
 	api.register({actions: [
 		{
 			name: 'test action',
 			pattern: testPattern,
-			handler: function(args) {
+			handler: function(args, context, done) {
 				t.equal(args, testPattern);
-				t.end();
+				t.equal(context, testContext);
+				done();
 			}
 		}
 	]}, function() {
-		api.act(testPattern);
+		api.act(testPattern, testContext, function() {
+			t.pass('passed handler callback');
+		});
 	});
 });
 

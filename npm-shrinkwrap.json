@@ -397,6 +397,32 @@
         }
       }
     },
+    "joi": {
+      "version": "9.0.0",
+      "resolved": "https://registry.npmjs.org/joi/-/joi-9.0.0.tgz",
+      "dependencies": {
+        "hoek": {
+          "version": "4.0.1",
+          "resolved": "https://registry.npmjs.org/hoek/-/hoek-4.0.1.tgz"
+        },
+        "isemail": {
+          "version": "2.2.0",
+          "resolved": "https://registry.npmjs.org/isemail/-/isemail-2.2.0.tgz"
+        },
+        "items": {
+          "version": "2.1.0",
+          "resolved": "https://registry.npmjs.org/items/-/items-2.1.0.tgz"
+        },
+        "moment": {
+          "version": "2.14.1",
+          "resolved": "https://registry.npmjs.org/moment/-/moment-2.14.1.tgz"
+        },
+        "topo": {
+          "version": "2.0.1",
+          "resolved": "https://registry.npmjs.org/topo/-/topo-2.0.1.tgz"
+        }
+      }
+    },
     "jsonwebtoken": {
       "version": "6.2.0",
       "resolved": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-6.2.0.tgz",
