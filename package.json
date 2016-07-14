@@ -1,6 +1,5 @@
 {
   "name": "eq8",
-  "version": "0.2.0",
   "description": "A web API platform using (E)vents and (Q)ueries to manage application state",
   "main": "index.js",
   "scripts": {
@@ -14,7 +13,13 @@
     "prepush": "npm run test",
     "test": "tape test/test.*.js | faucet",
     "cover": "istanbul cover tape test/test.*.js",
-    "analyze": "plato -d analysis index.js ./lib/registrars/*.js ./lib/api/*.js"
+    "analyze": "plato -d analysis index.js ./lib/registrars/*.js ./lib/api/*.js ./lib/listeners/*.js ./lib/middlewares/*.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "release": {
+    "fallbackTags": {
+      "next": "latest"
+    }
   },
   "repository": {
     "type": "git",
@@ -31,7 +36,7 @@
   },
   "homepage": "https://eq8.js.org",
   "engines": {
-    "node": ">=4.4.3 <5.0.0",
+    "node": ">=4.4.5 <5.0.0",
     "npm": ">=2.15.1 <3.0.0"
   },
   "dependencies": {
@@ -60,6 +65,7 @@
     "nsp": "2.3.2",
     "plato": "1.5.0",
     "proxyquire": "1.7.4",
+    "semantic-release": "4.3.5",
     "tape": "4.5.1"
   },
   "eslintConfig": {
