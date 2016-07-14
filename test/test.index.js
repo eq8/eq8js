@@ -72,17 +72,20 @@ test('register() view and view() it', function(t) {
 		req: 'someArbitraryRequest'
 	};
 
+	t.plan(3);
 	api.register({views: [
 		{
 			name: 'test action',
 			pattern: testPattern,
-			handler: function(pattern, context) {
+			handler: function(pattern, context, done) {
 				t.equal(pattern, testPattern);
 				t.equal(context, testContext);
-				t.end();
+				done();
 			}
 		}
 	]}, function() {
-		api.view(testPattern, testContext);
+		api.view(testPattern, testContext, function() {
+			t.pass('passed handler callback');
+		});
 	});
 });
