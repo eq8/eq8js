@@ -152,8 +152,8 @@ test('api.listen()', function(assert) {
 	var error = 'error';
 
 	// MOCKS
-	var mockExpress = {
-		assertExpress: function() {
+	var mockMiddleware = {
+		assertMiddleware: function() {
 			assert.pass();
 		}
 	};
@@ -189,7 +189,7 @@ test('api.listen()', function(assert) {
 	// TEST
 	var listen = require('../lib/api/listen.js')(_, mockCore, mockWSS);
 	var fixture = {
-		express: mockExpress,
+		middleware: mockMiddleware,
 		emit: function() {
 			var e = arguments[0];
 			var ws = arguments[1];

@@ -6,7 +6,7 @@ var path = require('path');
 var proxyquire = require('proxyquire');
 var Api = require('../index.js');
 
-function _mockExpress(t, initArgs) {
+function _mockMiddleware(t, initArgs) {
 	initArgs = initArgs || 'default';
 	return {
 		assert: function(assertArgs) {
@@ -16,24 +16,24 @@ function _mockExpress(t, initArgs) {
 	};
 }
 
-test('api.express returns express provided from init options', function(t) {
-	var mockExpress = _.partial(
-		_mockExpress,
+test('api.middleware returns middleware provided from init options', function(t) {
+	var mockMiddleware = _.partial(
+		_mockMiddleware,
 		t
 	);
 
 	var indexPath = path.resolve(__dirname, '../lib/index.js');
 	var LocalApi = proxyquire(indexPath, {
-		express: mockExpress
+		connect: mockMiddleware
 	});
 	var apiDefault = new LocalApi();
 	var apiCustom = new LocalApi({
-		express: mockExpress('custom')
+		middleware: mockMiddleware('custom')
 	});
 
 	t.plan(2);
-	apiDefault.express.assert('default');
-	apiCustom.express.assert('custom');
+	apiDefault.middleware.assert('default');
+	apiCustom.middleware.assert('custom');
 });
 
 test('register() an action and act() on it', function(t) {
