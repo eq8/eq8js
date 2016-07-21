@@ -8,38 +8,12 @@
       "resolved": "https://registry.npmjs.org/async/-/async-2.0.0.tgz"
     },
     "bloomrun": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/bloomrun/-/bloomrun-1.1.2.tgz",
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/bloomrun/-/bloomrun-2.1.0.tgz",
       "dependencies": {
         "bloomfilter": {
           "version": "0.0.16",
           "resolved": "https://registry.npmjs.org/bloomfilter/-/bloomfilter-0.0.16.tgz"
-        },
-        "es6-set": {
-          "version": "0.1.4",
-          "resolved": "https://registry.npmjs.org/es6-set/-/es6-set-0.1.4.tgz",
-          "dependencies": {
-            "d": {
-              "version": "0.1.1",
-              "resolved": "https://registry.npmjs.org/d/-/d-0.1.1.tgz"
-            },
-            "es5-ext": {
-              "version": "0.10.12",
-              "resolved": "https://registry.npmjs.org/es5-ext/-/es5-ext-0.10.12.tgz"
-            },
-            "es6-iterator": {
-              "version": "2.0.0",
-              "resolved": "https://registry.npmjs.org/es6-iterator/-/es6-iterator-2.0.0.tgz"
-            },
-            "es6-symbol": {
-              "version": "3.1.0",
-              "resolved": "https://registry.npmjs.org/es6-symbol/-/es6-symbol-3.1.0.tgz"
-            },
-            "event-emitter": {
-              "version": "0.3.4",
-              "resolved": "https://registry.npmjs.org/event-emitter/-/event-emitter-0.3.4.tgz"
-            }
-          }
         }
       }
     },
@@ -274,9 +248,13 @@
       }
     },
     "jsonwebtoken": {
-      "version": "6.2.0",
-      "resolved": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-6.2.0.tgz",
+      "version": "7.1.6",
+      "resolved": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-7.1.6.tgz",
       "dependencies": {
+        "cb": {
+          "version": "0.1.0",
+          "resolved": "https://registry.npmjs.org/cb/-/cb-0.1.0.tgz"
+        },
         "joi": {
           "version": "6.10.1",
           "resolved": "https://registry.npmjs.org/joi/-/joi-6.10.1.tgz",
