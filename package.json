@@ -9,9 +9,6 @@
     "deps:extra": "dependency-check package.json --extra --no-dev --ignore",
     "upgrade": "ncu -u --semverLevel major && rm -rf node_modules npm-shrinkwrap.json && npm install && npm-shrinkwrap",
     "lint": "eslint lib test",
-    "precommit": "npm run lint",
-    "commitmsg": "validate-commit-msg",
-    "prepush": "npm install && npm-shrinkwrap && npm run test",
     "publish:latest": "npm publish --tag latest",
     "test": "tape test/test.*.js | faucet",
     "cover": "istanbul cover tape test/test.*.js",
@@ -23,6 +20,11 @@
     "tag": "next"
   },
   "config": {
+    "ghooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "validate-commit-msg",
+      "pre-push": "npm install && npm-shrinkwrap && npm run test"
+    },
     "validate-commit-msg": {
       "helpMessage": "allowed types: feat, fix, docs, style, refactor, perf, test, chore, revert"
     }
@@ -71,7 +73,7 @@
     "eslint": "2.13.1",
     "eslint-config-eslint": "3.0.0",
     "faucet": "0.0.1",
-    "husky": "0.11.4",
+    "ghooks": "1.3.2",
     "istanbul": "0.4.4",
     "npm-check-updates": "2.7.1",
     "npm-shrinkwrap": "200.5.1",
