@@ -10,6 +10,7 @@
     "upgrade": "ncu -u --semverLevel major && rm -rf node_modules npm-shrinkwrap.json && npm install && npm-shrinkwrap",
     "lint": "eslint lib test",
     "precommit": "npm run lint",
+    "commitmsg": "validate-commit-msg",
     "prepush": "npm install && npm-shrinkwrap && npm run test",
     "publish:latest": "npm publish --tag latest",
     "test": "tape test/test.*.js | faucet",
@@ -20,6 +21,11 @@
   },
   "publishConfig": {
     "tag": "next"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "helpMessage": "allowed types: feat, fix, docs, style, refactor, perf, test, chore, revert"
+    }
   },
   "release": {
     "fallbackTags": {
@@ -73,7 +79,8 @@
     "plato": "1.6.0",
     "proxyquire": "1.7.10",
     "semantic-release": "4.3.5",
-    "tape": "4.6.0"
+    "tape": "4.6.0",
+    "validate-commit-msg": "2.6.1"
   },
   "eslintConfig": {
     "extends": "eslint",
