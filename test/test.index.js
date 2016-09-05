@@ -75,14 +75,14 @@ test('register() view and view() it', function(t) {
 		{
 			name: 'test action',
 			pattern: testPattern,
-			handler: function(pattern, context, done) {
-				t.equal(pattern, testPattern);
+			handler: function(context, pattern, done) {
 				t.equal(context, testContext);
+				t.equal(pattern, testPattern);
 				done();
 			}
 		}
 	]}, function() {
-		api.view(testPattern, testContext, function() {
+		api.view(testContext, testPattern, function() {
 			t.pass('passed handler callback');
 		});
 	});

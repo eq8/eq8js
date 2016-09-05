@@ -51,9 +51,9 @@ test('api.view() with no callback', function(assert) {
 
 	// MOCKS
 	var mockViews = bloomrun();
-	mockViews.add(expectedPattern, function(args, ctxt, done) {
-		assert.deepEqual(args, expectedPattern);
+	mockViews.add(expectedPattern, function(ctxt, args, done) {
 		assert.deepEqual(ctxt, expectedContext);
+		assert.deepEqual(args, expectedPattern);
 		done();
 	});
 
@@ -75,7 +75,7 @@ test('api.view() with no callback', function(assert) {
 	// - the expected context
 	// assert that api.view() would call _.noop if no callback was provided
 	assert.plan(3);
-	fixture.view(expectedPattern, expectedContext);
+	fixture.view(expectedContext, expectedPattern);
 });
 
 test('api.view() with callback', function(assert) {
@@ -90,7 +90,9 @@ test('api.view() with callback', function(assert) {
 
 	// MOCKS
 	var mockViews = bloomrun();
-	mockViews.add(expectedPattern, function(args, ctxt, done) {
+	mockViews.add(expectedPattern, function(ctxt, args, done) {
+		assert.deepEqual(ctxt, expectedContext);
+		assert.deepEqual(args, expectedPattern);
 		done(expectedError);
 	});
 
@@ -102,8 +104,8 @@ test('api.view() with callback', function(assert) {
 	};
 
 	// assert that api.view() would call the provided callback
-	assert.plan(1);
-	fixture.view(expectedPattern, expectedContext, function(err) {
+	assert.plan(3);
+	fixture.view(expectedContext, expectedPattern, function(err) {
 		assert.equal(err, expectedError);
 	});
 });
