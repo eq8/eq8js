@@ -18,47 +18,10 @@ test('api.act() with no callback', function(assert) {
 
 	// MOCKS
 	var mockActions = bloomrun();
-	mockActions.add(expectedPattern, function(args, ctxt, done) {
-		assert.deepEqual(args, expectedPattern);
+	mockActions.add(expectedPattern, function(ctxt, args, done) {
 		assert.deepEqual(ctxt, expectedContext);
+		assert.deepEqual(args, expectedPattern);
 		done();
-	});
-
-	var mockLodash = _.defaults({
-		noop: function() {
-			assert.pass();
-		}
-	}, _);
-
-	// TEST
-	var act = require('../lib/api/act.js')(mockLodash, async);
-	var fixture = {
-		actions: mockActions,
-		act: act
-	};
-
-	// assert that api.act() would call our handler with:
-	// - the expected pattern; and,
-	// - the expected context
-	// assert that api.act() would call _.noop if no callback was provided
-	assert.plan(3);
-	fixture.act(expectedPattern, expectedContext);
-});
-
-test('api.act() with callback', function(assert) {
-	// EXPECTED
-	var expectedPattern = {
-		pattern: 1
-	};
-	var expectedContext = {
-		anon: true
-	};
-	var expectedError = 'expected error';
-
-	// MOCKS
-	var mockActions = bloomrun();
-	mockActions.add(expectedPattern, function(args, ctxt, done) {
-		done(expectedError);
 	});
 
 	// TEST
@@ -68,11 +31,12 @@ test('api.act() with callback', function(assert) {
 		act: act
 	};
 
-	// assert that api.act() would call the provided callback
-	assert.plan(1);
-	fixture.act(expectedPattern, expectedContext, function(err) {
-		assert.equal(err, expectedError);
-	});
+	// assert that api.act() would call our handler with:
+	// - the expected pattern; and,
+	// - the expected context
+	// assert that api.act() would call _.noop if no callback was provided
+	assert.plan(2);
+	fixture.act(expectedContext, expectedPattern);
 });
 
 // api.view() -------------------------------------
