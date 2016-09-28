@@ -66,6 +66,7 @@
     "passport-anonymous": "1.0.1",
     "passport-jwt": "2.1.0",
     "route-recognizer": "0.2.6",
+    "rx": "4.1.0",
     "utf-8-validate": "1.2.1",
     "ws": "1.1.1"
   },

@@ -589,6 +589,10 @@
       "version": "0.2.6",
       "resolved": "https://registry.npmjs.org/route-recognizer/-/route-recognizer-0.2.6.tgz"
     },
+    "rx": {
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/rx/-/rx-4.1.0.tgz"
+    },
     "utf-8-validate": {
       "version": "1.2.1",
       "resolved": "https://registry.npmjs.org/utf-8-validate/-/utf-8-validate-1.2.1.tgz",
