@@ -10,9 +10,9 @@ module.exports = function(test) {
 		var api = {
 			router: {
 				add: function(params) {
-					t.ok(params);
-					t.equal(params.path, testUri);
-					t.deepEqual(params.handler({params: {id: 'test'}}), _.assign(
+					t.ok(params[0]);
+					t.equal(params[0].path, testUri);
+					t.deepEqual(params[0].handler({params: {id: 'test'}}), _.assign(
 						{}, {uri: testUri}, {id: 'test'}
 					));
 				}
