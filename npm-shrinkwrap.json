@@ -168,8 +168,8 @@
       }
     },
     "eq8-api": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/eq8-api/-/eq8-api-1.0.0.tgz",
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/eq8-api/-/eq8-api-1.0.1.tgz",
       "dependencies": {
         "bloomrun": {
           "version": "2.1.3",

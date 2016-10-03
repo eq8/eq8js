@@ -59,7 +59,7 @@
     "body-parser": "1.15.2",
     "bufferutil": "1.2.1",
     "connect": "3.5.0",
-    "eq8-api": "1.0.0",
+    "eq8-api": "1.0.1",
     "jsonwebtoken": "6.2.0",
     "lodash": "4.13.1",
     "passport": "0.3.2",
