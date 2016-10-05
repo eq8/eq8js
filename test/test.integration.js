@@ -65,7 +65,7 @@ test('integration', function(t) {
 				}
 			},
 			{
-				name: 'Integration Test View',
+				name: 'Integration Test View User',
 				pattern: {
 					uri: '/test/user',
 				},
@@ -74,6 +74,15 @@ test('integration', function(t) {
 					t.ok(ctxt && ctxt.user && ctxt.user.roles);
 					t.ok(_.difference(ctxt.user.roles, ['state', 'express']));
 					done(null, '');
+				}
+			},
+			{
+				name: 'Integration Test View w/ error',
+				pattern: {
+					uri: '/test/error',
+				},
+				handler: function(ctxt, args, done) {
+					done(500, '');
 				}
 			}
 		]
@@ -160,6 +169,23 @@ test('integration', function(t) {
 						'eyJyb2xlcyI6WyJzdGF0ZSIsImV4cHJlc3MiXX0.' +
 						'2jDwsYX-VnQmNB67dq8MX4Y0kebG7mhyGnX0HpZbDT8'
 				}
+			}, function(res) {
+				res.on('data', function() {
+					_.noop();
+				});
+				res.on('end', function() {
+					done();
+				});
+			});
+
+			req.end();
+		},
+		function(done) {
+			var req = http.request({
+				hostname: 'localhost',
+				port: 3000,
+				path: '/test/error',
+				method: 'GET'
 			}, function(res) {
 				res.on('data', function() {
 					_.noop();
