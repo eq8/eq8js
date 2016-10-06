@@ -25,7 +25,7 @@ test('integration', function(t) {
 				}
 			},
 			{
-				name: 'Integration Test Action',
+				name: 'Integration Test Action w/ Invalid User',
 				pattern: {ns: 'test', cmd: 'integration', param: 'action-with-invalid-user'},
 				handler: function(ctxt, args) {
 					t.deepEqual(args, {ns: 'test', cmd: 'integration', param: 'action-with-invalid-user'});
@@ -36,7 +36,7 @@ test('integration', function(t) {
 				}
 			},
 			{
-				name: 'Integration Test Action',
+				name: 'Integration Test Action w/o User',
 				pattern: {ns: 'test', cmd: 'integration', param: 'action-without-user'},
 				handler: function(ctxt, args) {
 					t.deepEqual(args, {ns: 'test', cmd: 'integration', param: 'action-without-user'});
@@ -82,7 +82,7 @@ test('integration', function(t) {
 					uri: '/test/error',
 				},
 				handler: function(ctxt, args, done) {
-					done(500, '');
+					done('500');
 				}
 			}
 		]
@@ -90,7 +90,7 @@ test('integration', function(t) {
 
 	api.listen(3000);
 
-	t.plan(19);
+	t.plan(20);
 	async.series([
 		function(done) {
 			var url = 'http://localhost:3000/?token=' +
@@ -137,6 +137,19 @@ test('integration', function(t) {
 
 					done();
 				}
+			});
+		},
+		function(done) {
+			var ws = new WebSocket('http://localhost:3000/test/integration/view');
+			ws.on('open', function() {
+				ws.send('invalid-json-object');
+			});
+
+			ws.on('message', function(msg) {
+				t.equal(msg, '{"error":{"status":"400","title":"bad-request"}}');
+				ws.close();
+
+				done();
 			});
 		},
 		function(done) {
