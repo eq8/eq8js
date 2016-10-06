@@ -14,7 +14,7 @@
     "publish:latest": "npm publish --tag latest",
     "test": "tape test/test.*.js | faucet",
     "cover": "istanbul cover tape test/test.*.js",
-    "analyze": "plato -d analysis index.js ./lib/registrars/*.js ./lib/api/*.js ./lib/listeners/*.js ./lib/middlewares/*.js",
+    "analyze": "plato -d analysis ./lib/index.js ./lib/api/*.js ./lib/asyncwares/*.js ./lib/listeners/*.js ./lib/modules/*.js ./lib/registrars/*.js ./lib/syncwares/*.js",
     "shrinkwrap": "npm-shrinkwrap",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
