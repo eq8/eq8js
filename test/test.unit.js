@@ -1,7 +1,6 @@
 'use strict';
 
 var _ = require('lodash');
-// var async = require('async');
 
 var test = require('tape');
 var proxyquire = require('proxyquire');
@@ -10,7 +9,7 @@ require('./unit/api/close.js')(test);
 require('./unit/modules/asyncware.js')(test);
 require('./unit/registrars/views.js')(test);
 
-test('test: lib/index.js - check api.options object is as expected', function(t) {
+test('unit: lib/index.js - check api.options object is as expected', function(t) {
 	var secret = 'secret';
 	var api = require('../lib/index.js')({jwt: {secret: secret}});
 
@@ -43,7 +42,7 @@ test('test: lib/index.js - check api.options object is as expected', function(t)
 	});
 });
 
-test('test: lib/index.js - check if dependencies are still in use', function(t) {
+test('unit: lib/index.js - check if dependencies are still in use', function(t) {
 	var asyncware = function() { // eslint-disable-line func-style
 		t.equal(arguments.length, 2);
 

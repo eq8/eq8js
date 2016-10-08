@@ -83,6 +83,7 @@
     "nsp": "2.6.1",
     "plato": "1.6.0",
     "proxyquire": "1.7.10",
+    "request": "2.75.0",
     "semantic-release": "4.3.5",
     "tape": "4.6.0",
     "validate-commit-msg": "2.6.1"
