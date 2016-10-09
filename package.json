@@ -1,6 +1,6 @@
 {
   "name": "eq8",
-  "description": "A web API platform using (E)vents and (Q)ueries to manage application state",
+  "description": "A web API gateway for using (E)vents and (Q)ueries to manage application state",
   "main": "index.js",
   "scripts": {
     "audit": "nsp check && npm outdated",
@@ -20,9 +20,6 @@
     "shrinkwrap": "npm-shrinkwrap",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz"
-  },
-  "publishConfig": {
-    "tag": "next"
   },
   "config": {
     "ghooks": {
@@ -48,7 +45,7 @@
   },
   "keywords": [
     "api",
-    "platform"
+    "gateway"
   ],
   "author": "bbartolome",
   "license": "Apache-2.0",
