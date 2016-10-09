@@ -12,23 +12,29 @@
     "upgrade": "ncu -u --semverLevel major && rm -rf node_modules npm-shrinkwrap.json && npm install && npm-shrinkwrap",
     "lint": "eslint lib test",
     "publish:latest": "npm publish --tag latest",
-    "test": "tape test/test.*.js | faucet",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "tape test/test.unit.js | faucet",
+    "test:integration": "tape test/test.integration.js | faucet",
     "cover": "istanbul cover tape test/test.*.js",
     "analyze": "plato -d analysis ./lib/index.js ./lib/api/*.js ./lib/asyncwares/*.js ./lib/listeners/*.js ./lib/modules/*.js ./lib/registrars/*.js ./lib/syncwares/*.js",
     "shrinkwrap": "npm-shrinkwrap",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "git-cz"
   },
   "publishConfig": {
     "tag": "next"
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "npm run lint && npm run test:unit",
       "commit-msg": "validate-commit-msg",
       "pre-push": "npm install && npm run build && npm run test"
     },
     "validate-commit-msg": {
       "helpMessage": "allowed types: feat, fix, docs, style, refactor, perf, test, chore, revert"
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "release": {
@@ -71,6 +77,8 @@
     "ws": "1.1.1"
   },
   "devDependencies": {
+    "commitizen": "2.8.6",
+    "cz-conventional-changelog": "1.2.0",
     "dependency-check": "2.5.3",
     "doctoc": "1.2.0",
     "eslint": "3.1.1",
