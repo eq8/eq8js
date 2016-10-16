@@ -20,7 +20,7 @@ test('unit: lib/index.js - check api.options object is as expected', function(t)
 	t.ok(api.options.jwt);
 	t.ok(_.isFunction(api.options.jwt.jwtFromRequest));
 
-	var actualJwtOptions = _.omit(api.options.jwt, ['jwtFromRequest']);
+	var actualJwtOptions = _.omit(api.options.jwt, ['jwtFromRequest', 'verifyCallback']);
 	t.deepEqual(actualJwtOptions, {
 		secret: secret,
 		sign: {
