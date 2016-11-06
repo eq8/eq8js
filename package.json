@@ -60,7 +60,6 @@
   "dependencies": {
     "async": "2.0.1",
     "body-parser": "1.15.2",
-    "bufferutil": "1.2.1",
     "connect": "3.5.0",
     "eq8-api": "2.0.0",
     "jsonwebtoken": "6.2.0",
@@ -70,7 +69,6 @@
     "passport-jwt": "2.1.0",
     "route-recognizer": "0.2.6",
     "rx": "4.1.0",
-    "utf-8-validate": "1.2.1",
     "ws": "1.1.1"
   },
   "devDependencies": {
