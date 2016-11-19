@@ -63,7 +63,7 @@
     "connect": "3.5.0",
     "eq8-api": "2.0.0",
     "jsonwebtoken": "7.1.9",
-    "lodash": "4.16.6",
+    "lodash": "4.17.0",
     "passport": "0.3.2",
     "passport-anonymous": "1.0.1",
     "passport-jwt": "2.2.1",
