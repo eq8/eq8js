@@ -58,7 +58,7 @@
     "npm": ">=2.15.9 <3.0.0"
   },
   "dependencies": {
-    "async": "2.1.2",
+    "async": "2.1.4",
     "body-parser": "1.15.2",
     "connect": "3.5.0",
     "eq8-api": "2.0.0",
