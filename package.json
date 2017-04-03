@@ -69,7 +69,7 @@
     "passport-jwt": "2.2.1",
     "route-recognizer": "0.2.8",
     "rx": "4.1.0",
-    "ws": "1.1.1"
+    "ws": "2.2.3"
   },
   "devDependencies": {
     "commitizen": "2.9.2",
