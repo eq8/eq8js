@@ -60,7 +60,7 @@
   "dependencies": {
     "async": "2.4.1",
     "body-parser": "1.17.2",
-    "connect": "3.6.2",
+    "connect": "3.6.3",
     "eq8-api": "2.0.0",
     "jsonwebtoken": "7.4.1",
     "lodash": "4.17.4",
