@@ -64,7 +64,7 @@
     "eq8-api": "2.0.0",
     "jsonwebtoken": "7.4.1",
     "lodash": "4.17.4",
-    "passport": "0.3.2",
+    "passport": "0.4.0",
     "passport-anonymous": "1.0.1",
     "passport-jwt": "2.2.1",
     "route-recognizer": "0.3.3",
